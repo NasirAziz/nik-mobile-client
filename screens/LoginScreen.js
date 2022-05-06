@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Image } from "react-native";
-
+import { StackActions } from '@react-navigation/native';
 import  AppTextInput  from '../components/AppTextInput';
 import  Screen  from '../components/Screen';
 import AppButton  from '../components/AppButton';
 
-function LoginScreen(props) {
+function LoginScreen({navigation}) {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
 
@@ -16,7 +16,9 @@ function LoginScreen(props) {
 
             <AppTextInput placeholder="Email" icon="email" onChangeText={text=>setUsername(text)} autoCapatalize="none" autoCorrent={false} keyboardType="email-address"/>
             <AppTextInput placeholder="Password" icon="lock" onChangeText={text=>setPassword(text)} autoCapatalize="none" autoCorrent={false} secureTextEntry textContentType="password"/>
-            <AppButton title="Login" onPress={() => {console.log(username,password)}}/>
+            <AppButton title="Login" onPress={() => {
+                console.log(username,password)
+                }}/>
       
         </Screen>
     );

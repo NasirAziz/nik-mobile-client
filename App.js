@@ -1,10 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet } from 'react-native';
+
 import HomeScreen from './screens/HomeScreen';
-import LoginScreen from './screens/LoginScreen';
+
+import AuthNavigator from './navigation/AuthNavigator';
+import HomeNavigator from './navigation/HomeNavigator';
+
+
+
+
 export default function App() {
+
   return (
-      <HomeScreen/>
+    <NavigationContainer>
+      <HomeNavigator />
+    </NavigationContainer>
   );
 }
 
